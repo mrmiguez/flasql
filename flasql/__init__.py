@@ -1,0 +1,1 @@
+from .flaskql import app
