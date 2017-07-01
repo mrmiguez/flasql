@@ -49,6 +49,6 @@ def oai_elem_page(elem):
     records = get_oai()
     try:
         elem_list = [value for record in records for value in record.metadata[elem]]
-    except TypeError:
+    except (TypeError, KeyError):
         pass
     return render_template('titles.html', titles=elem_list)
